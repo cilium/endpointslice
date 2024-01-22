@@ -48,10 +48,11 @@ func podToEndpoint(pod *v1.Pod, node *v1.Node, service *v1.Service, addressType 
 			Terminating: &terminating,
 		},
 		TargetRef: &v1.ObjectReference{
-			Kind:      "Pod",
-			Namespace: pod.ObjectMeta.Namespace,
-			Name:      pod.ObjectMeta.Name,
-			UID:       pod.ObjectMeta.UID,
+			APIVersion: pod.APIVersion,
+			Kind:       pod.Kind,
+			Namespace:  pod.ObjectMeta.Namespace,
+			Name:       pod.ObjectMeta.Name,
+			UID:        pod.ObjectMeta.UID,
 		},
 	}
 
