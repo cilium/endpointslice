@@ -186,8 +186,8 @@ func (r *Reconciler) reconcileByAddressType(logger klog.Logger, service *corev1.
 			// On the other side, if the service.Spec.PublishNotReadyAddresses is set we just add the
 			// Pod, since the user is explicitly indicating that the Pod address should be published.
 			if !service.Spec.PublishNotReadyAddresses {
-				logger.Info("skipping Pod for Service, Node not found", "pod", klog.KObj(pod), "service", klog.KObj(service), "node", klog.KRef("", pod.Spec.NodeName))
-				errs = append(errs, fmt.Errorf("skipping Pod %s for Service %s/%s: Node %s Not Found", pod.Name, service.Namespace, service.Name, pod.Spec.NodeName))
+				logger.Info(fmt.Sprintf("skipping %s for Service, Node not found", pod.Kind), "pod", klog.KObj(pod), "service", klog.KObj(service), "node", klog.KRef("", pod.Spec.NodeName))
+				errs = append(errs, fmt.Errorf("skipping %s %s for Service %s/%s: Node %s Not Found", pod.Kind, pod.Name, service.Namespace, service.Name, pod.Spec.NodeName))
 				continue
 			}
 		}
