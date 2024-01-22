@@ -1,6 +1,6 @@
 // This is a generated file. Do not edit directly.
 
-module k8s.io/endpointslice
+module github.com/cilium/endpointslice
 
 go 1.21
 

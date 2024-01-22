@@ -20,9 +20,9 @@ import (
 	"fmt"
 	"testing"
 
+	endpointsliceutil "github.com/cilium/endpointslice/util"
 	discovery "k8s.io/api/discovery/v1"
 	"k8s.io/apimachinery/pkg/types"
-	endpointsliceutil "k8s.io/endpointslice/util"
 	"k8s.io/utils/pointer"
 )
 
