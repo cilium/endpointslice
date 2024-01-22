@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"time"
 
+	endpointutil "github.com/cilium/endpointslice/util"
 	v1 "k8s.io/api/core/v1"
 	discovery "k8s.io/api/discovery/v1"
 	apiequality "k8s.io/apimachinery/pkg/api/equality"
@@ -28,7 +29,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/apimachinery/pkg/util/sets"
-	endpointutil "k8s.io/endpointslice/util"
 	"k8s.io/klog/v2"
 	utilnet "k8s.io/utils/net"
 )

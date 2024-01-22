@@ -22,6 +22,9 @@ import (
 	"sort"
 	"time"
 
+	"github.com/cilium/endpointslice/metrics"
+	"github.com/cilium/endpointslice/topologycache"
+	endpointsliceutil "github.com/cilium/endpointslice/util"
 	corev1 "k8s.io/api/core/v1"
 	discovery "k8s.io/api/discovery/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
@@ -33,9 +36,6 @@ import (
 	clientset "k8s.io/client-go/kubernetes"
 	corelisters "k8s.io/client-go/listers/core/v1"
 	"k8s.io/client-go/tools/record"
-	"k8s.io/endpointslice/metrics"
-	"k8s.io/endpointslice/topologycache"
-	endpointsliceutil "k8s.io/endpointslice/util"
 	"k8s.io/klog/v2"
 )
 
